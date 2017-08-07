@@ -22,6 +22,30 @@ privileged aspect CategoryRepositoryImpl_Roo_Jpa_Repository_Impl {
     declare @type: CategoryRepositoryImpl: @Transactional(readOnly = true);
     
     /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String CategoryRepositoryImpl.CREATED_DATE = "createdDate";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String CategoryRepositoryImpl.CREATED_BY = "createdBy";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String CategoryRepositoryImpl.MODIFIED_DATE = "modifiedDate";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String CategoryRepositoryImpl.MODIFIED_BY = "modifiedBy";
+    
+    /**
      * TODO Auto-generated method documentation
      * 
      * @param globalSearch
@@ -34,10 +58,14 @@ privileged aspect CategoryRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<Category> query = from(category);
         
-        Path<?>[] paths = new Path<?>[] {};        
+        Path<?>[] paths = new Path<?>[] {category.createdDate,category.createdBy,category.modifiedDate,category.modifiedBy};        
         applyGlobalSearch(globalSearch, query, paths);
         
-        AttributeMappingBuilder mapping = buildMapper();
+        AttributeMappingBuilder mapping = buildMapper()
+			.map(CREATED_DATE, category.createdDate)
+			.map(CREATED_BY, category.createdBy)
+			.map(MODIFIED_DATE, category.modifiedDate)
+			.map(MODIFIED_BY, category.modifiedBy);
         
         applyPagination(pageable, query, mapping);
         applyOrderById(query);

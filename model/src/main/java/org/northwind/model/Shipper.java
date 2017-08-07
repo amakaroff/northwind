@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = Shipper
@@ -23,6 +24,7 @@ import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
 @RooToString
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class Shipper {
 
     /**

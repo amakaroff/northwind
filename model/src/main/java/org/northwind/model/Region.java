@@ -15,6 +15,7 @@ import java.util.Set;
 import javax.persistence.OneToMany;
 import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = Region
@@ -25,6 +26,7 @@ import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
 @RooToString
 @RooJpaEntity(readOnly = true)
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class Region {
 
     /**

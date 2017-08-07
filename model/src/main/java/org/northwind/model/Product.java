@@ -17,6 +17,7 @@ import java.util.Set;
 import javax.persistence.OneToMany;
 import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = Product
@@ -27,6 +28,7 @@ import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
 @RooToString
 @RooJpaEntity(entityFormatExpression = "#{name} #{code}")
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class Product {
 
     /**

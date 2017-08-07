@@ -217,6 +217,67 @@
             <groupId>io.springlets</groupId>
             <artifactId>springlets-boot-starter-webflow</artifactId>
         </dependency>
+    <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>io.tracee.binding</groupId>
+            <artifactId>tracee-jaxws</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>io.tracee.binding</groupId>
+            <artifactId>tracee-cxf</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>io.springlets</groupId>
+            <artifactId>springlets-boot-starter-mail</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>io.springlets</groupId>
+            <artifactId>springlets-boot-starter-authentication</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>io.springlets</groupId>
+            <artifactId>springlets-boot-starter-data-jpa</artifactId>
+        </dependency>
+    <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    <dependency>
+            <groupId>org.northwind</groupId>
+            <artifactId>model</artifactId>
+            <type>test-jar</type>
+        </dependency>
+    <dependency>
+            <groupId>io.springlets</groupId>
+            <artifactId>springlets-boot-starter-test</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -238,6 +299,10 @@
         <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

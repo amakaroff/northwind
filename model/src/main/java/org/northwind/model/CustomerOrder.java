@@ -24,6 +24,7 @@ import java.math.BigDecimal;
 import org.springframework.format.annotation.NumberFormat;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = CustomerOrder
@@ -34,6 +35,7 @@ import javax.persistence.Enumerated;
 @RooToString
 @RooJpaEntity(entityFormatMessage = "customerorder_format")
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class CustomerOrder {
 
     /**

@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = SolidProduct
@@ -17,6 +18,7 @@ import javax.persistence.Version;
 @RooToString
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class SolidProduct {
 
     /**

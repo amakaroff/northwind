@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
 import javax.persistence.ManyToMany;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = Supplier
@@ -26,6 +27,7 @@ import javax.persistence.ManyToMany;
 @RooToString
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class Supplier {
 
     /**

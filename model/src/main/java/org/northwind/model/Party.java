@@ -10,6 +10,7 @@ import javax.persistence.Version;
 import io.springlets.format.EntityFormat;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = Party
@@ -20,6 +21,7 @@ import javax.persistence.ManyToOne;
 @RooToString
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class Party {
 
     /**

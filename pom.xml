@@ -54,6 +54,8 @@
     <respond.version>1.4.2</respond.version>
     <html5shiv.version>3.7.3</html5shiv.version>
     <bootstrap.ie10-viewport-bug-workaround.version>1.0.3</bootstrap.ie10-viewport-bug-workaround.version>
+    <cxf.version>3.1.8</cxf.version>
+    <thymeleaf-extras-springsecurity4.version>3.0.0.RELEASE</thymeleaf-extras-springsecurity4.version>
     </properties>
 
     <modules>
@@ -298,6 +300,54 @@
                 <artifactId>springlets-boot-starter-webflow</artifactId>
                 <version>${springlets.version}</version>
             </dependency>
+        <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+        <dependency>
+                <groupId>io.tracee.binding</groupId>
+                <artifactId>tracee-jaxws</artifactId>
+                <version>${tracee.version}</version>
+            </dependency>
+        <dependency>
+                <groupId>io.tracee.binding</groupId>
+                <artifactId>tracee-cxf</artifactId>
+                <version>${tracee.version}</version>
+            </dependency>
+        <dependency>
+                <groupId>io.springlets</groupId>
+                <artifactId>springlets-boot-starter-mail</artifactId>
+                <version>${springlets.version}</version>
+            </dependency>
+        <dependency>
+                <groupId>io.springlets</groupId>
+                <artifactId>springlets-mail</artifactId>
+                <version>${springlets.version}</version>
+            </dependency>
+        <dependency>
+                <groupId>io.springlets</groupId>
+                <artifactId>springlets-boot-starter-authentication</artifactId>
+                <version>${springlets.version}</version>
+            </dependency>
+        <dependency>
+                <groupId>io.springlets</groupId>
+                <artifactId>springlets-boot-starter-data-jpa</artifactId>
+                <version>${springlets.version}</version>
+            </dependency>
+        <dependency>
+                <groupId>org.northwind</groupId>
+                <artifactId>model</artifactId>
+                <version>${project.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+        <dependency>
+                <groupId>io.springlets</groupId>
+                <artifactId>springlets-boot-starter-test</artifactId>
+                <version>${springlets.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -431,6 +481,24 @@
                             <configuration>
               <sourceFolder>target/generated-sources/java</sourceFolder>
             </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <configuration>
+			<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+			<excludes>
+        <exclude>**/*_Roo_*</exclude>
+      </excludes>
+		</configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
                         </execution>
                     </executions>
                 </plugin>

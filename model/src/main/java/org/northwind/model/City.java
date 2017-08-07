@@ -15,6 +15,7 @@ import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
 import io.springlets.format.EntityFormat;
 import javax.persistence.ManyToOne;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = City
@@ -25,6 +26,7 @@ import javax.persistence.ManyToOne;
 @RooToString
 @RooJpaEntity(readOnly = true)
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class City {
 
     /**

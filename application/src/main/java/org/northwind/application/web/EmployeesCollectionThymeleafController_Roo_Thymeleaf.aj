@@ -445,6 +445,15 @@ privileged aspect EmployeesCollectionThymeleafController_Roo_Thymeleaf {
         else if (columnName.equals("version")) {
             builder.addColumn(getMessageSource().getMessage("label_employee_version", null, "Version", locale), "version", Integer.class.getName(), 100);
         }
+        else if (columnName.equals("address")) {
+            builder.addColumn(getMessageSource().getMessage("label_employee_address", null, "Address", locale), "address", String.class.getName(), 100);
+        }
+        else if (columnName.equals("postalCode")) {
+            builder.addColumn(getMessageSource().getMessage("label_employee_postalcode", null, "Postal Code", locale), "postalCode", String.class.getName(), 100);
+        }
+        else if (columnName.equals("phone")) {
+            builder.addColumn(getMessageSource().getMessage("label_employee_phone", null, "Phone", locale), "phone", String.class.getName(), 100);
+        }
         else if (columnName.equals("firstName")) {
             builder.addColumn(getMessageSource().getMessage("label_employee_firstname", null, "First Name", locale), "firstName", String.class.getName(), 100);
         }

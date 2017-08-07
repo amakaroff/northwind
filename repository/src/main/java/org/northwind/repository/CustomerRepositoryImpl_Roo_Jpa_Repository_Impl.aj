@@ -39,6 +39,30 @@ privileged aspect CustomerRepositoryImpl_Roo_Jpa_Repository_Impl {
      * TODO Auto-generated attribute documentation
      * 
      */
+    public static final String CustomerRepositoryImpl.ADDRESS = "address";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String CustomerRepositoryImpl.POSTAL_CODE = "postalCode";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String CustomerRepositoryImpl.PHONE = "phone";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String CustomerRepositoryImpl.REGION = "region";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
     public static final String CustomerRepositoryImpl.COMPANY_NAME = "companyName";
     
     /**

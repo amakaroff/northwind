@@ -37,6 +37,30 @@ privileged aspect EmployeeRepositoryImpl_Roo_Jpa_Repository_Impl {
      * TODO Auto-generated attribute documentation
      * 
      */
+    public static final String EmployeeRepositoryImpl.ADDRESS = "address";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String EmployeeRepositoryImpl.POSTAL_CODE = "postalCode";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String EmployeeRepositoryImpl.PHONE = "phone";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
+    public static final String EmployeeRepositoryImpl.REGION = "region";
+    
+    /**
+     * TODO Auto-generated attribute documentation
+     * 
+     */
     public static final String EmployeeRepositoryImpl.FIRST_NAME = "firstName";
     
     /**
@@ -94,12 +118,16 @@ privileged aspect EmployeeRepositoryImpl_Roo_Jpa_Repository_Impl {
         
         JPQLQuery<Employee> query = from(employee);
         
-        Path<?>[] paths = new Path<?>[] {employee.city,employee.country,employee.firstName,employee.lastName,employee.title,employee.birthDate,employee.hireDate,employee.extension,employee.photo,employee.notes};        
+        Path<?>[] paths = new Path<?>[] {employee.city,employee.country,employee.address,employee.postalCode,employee.phone,employee.region,employee.firstName,employee.lastName,employee.title,employee.birthDate,employee.hireDate,employee.extension,employee.photo,employee.notes};        
         applyGlobalSearch(globalSearch, query, paths);
         
         AttributeMappingBuilder mapping = buildMapper()
 			.map(CITY, employee.city)
 			.map(COUNTRY, employee.country)
+			.map(ADDRESS, employee.address)
+			.map(POSTAL_CODE, employee.postalCode)
+			.map(PHONE, employee.phone)
+			.map(REGION, employee.region)
 			.map(FIRST_NAME, employee.firstName)
 			.map(LAST_NAME, employee.lastName)
 			.map(TITLE, employee.title)

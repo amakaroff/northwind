@@ -28,9 +28,29 @@
             <div id="mainEntityFieldSet">
               <h2 data-th-text="#{label_data_entity(#{label_customer})}">Customer data</h2>
               <ul class="list-unstyled" id="containerFields">
+                  <li id="customer-city-field" data-z="6fc5a009">
+            	      <strong data-th-text="#{label_customer_city}">city</strong>
+                    <span data-th-text="*{{city}}">cityValue</span>
+         	        </li>
                   <li id="customer-country-field" data-z="a8aa9855">
             	      <strong data-th-text="#{label_customer_country}">country</strong>
                     <span data-th-text="*{{country}}">countryValue</span>
+         	        </li>
+                  <li id="customer-address-field" data-z="59b38495">
+            	      <strong data-th-text="#{label_customer_address}">address</strong>
+                    <span data-th-text="*{{address}}">addressValue</span>
+         	        </li>
+                  <li id="customer-postalcode-field" data-z="398bd709">
+            	      <strong data-th-text="#{label_customer_postalcode}">postalCode</strong>
+                    <span data-th-text="*{{postalCode}}">postalCodeValue</span>
+         	        </li>
+                  <li id="customer-phone-field" data-z="4cb172d5">
+            	      <strong data-th-text="#{label_customer_phone}">phone</strong>
+                    <span data-th-text="*{{phone}}">phoneValue</span>
+         	        </li>
+                  <li id="customer-region-field" data-z="d0d2f869">
+            	      <strong data-th-text="#{label_customer_region}">region</strong>
+                    <span data-th-text="*{{region}}">regionValue</span>
          	        </li>
                   <li id="customer-companyname-field" data-z="6d0de335">
             	      <strong data-th-text="#{label_customer_companyname}">companyName</strong>

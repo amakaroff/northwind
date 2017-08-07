@@ -7,6 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
+import java.util.Calendar;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.roo.addon.jpa.annotations.audit.RooJpaAudit;
 
 /**
  * = Category
@@ -17,6 +27,8 @@ import javax.persistence.Version;
 @RooToString
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
+@RooJpaAudit
 public class Category {
 
     /**
@@ -33,4 +45,36 @@ public class Category {
      */
     @Version
     private Integer version;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Calendar createdDate;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @CreatedBy
+    private String createdBy;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(style = "M-")
+    private Calendar modifiedDate;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    @LastModifiedBy
+    private String modifiedBy;
 }

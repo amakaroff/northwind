@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.ManyToMany;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = Store
@@ -23,6 +24,7 @@ import javax.persistence.ManyToMany;
 @RooToString
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class Store {
 
     /**

@@ -12,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import org.springframework.format.annotation.NumberFormat;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = OrderDetail
@@ -22,6 +23,7 @@ import org.springframework.format.annotation.NumberFormat;
 @RooToString
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
+@RooJaxbEntity
 public class OrderDetail {
 
     /**

@@ -50,6 +50,17 @@
       <span id="description-error" class="help-block" data-th-if="${#fields.hasErrors('description')}" data-th-errors="*{description}">Error message.</span>
   </div>
 </div>
+<div class="form-group has-error has-feedback" data-z="9e493e65" id="customerorder-city-field" data-th-classappend="${#fields.hasErrors('city')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('CitiesCollectionThymeleafController')}">
+    <label for="city" class="col-md-3 control-label" data-th-text="#{label_customerorder_city}">City</label>
+    <div class="col-md-6">
+      <!-- Select2 -->
+      <select data-th-field="*{city}" class="form-control dropdown-select-ajax" data-allow-clear="true" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" data-data-placeholder="#{info_select_an_option}">
+          <option data-th-unless="*{city} == null" data-th-value="*{city.id}" data-th-text="*{{city}}" selected="selected">City</option>
+      </select>
+      <span data-th-classappend="${#fields.hasErrors('city')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('city')}" aria-hidden="true"></span>
+      <span id="city-error" class="help-block" data-th-if="${#fields.hasErrors('city')}" data-th-errors="*{city}">Error message.</span>
+    </div>
+</div>
 <div class="form-group has-error has-feedback" data-z="8f440c79" id="customerorder-country-field" data-th-classappend="${#fields.hasErrors('country')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('CountriesCollectionThymeleafController')}">
     <label for="country" class="col-md-3 control-label" data-th-text="#{label_customerorder_country}">Country</label>
     <div class="col-md-6">
@@ -157,6 +168,28 @@
     <input id="closeDate" name="closeDate" data-th-value="*{{closeDate}}" type="text" class="form-control datetimepicker" placeholder="closeDate" data-th-placeholder="#{label_customerorder_closedate}" data-th-attr="data-dateformat=${closeDate_date_format}" data-toggle="tooltip" /> <span data-th-classappend="${#fields.hasErrors('closeDate')}? 'glyphicon glyphicon-remove form-control-feedback'" data-th-if="${#fields.hasErrors('closeDate')}" aria-hidden="true"></span>
      <span id="closeDate-error" class="help-block" data-th-if="${#fields.hasErrors('closeDate')}" data-th-errors="*{closeDate}">Error message.</span>
   </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="6ce86fc5" id="customerorder-region-field" data-th-classappend="${#fields.hasErrors('region')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('RegionsCollectionThymeleafController')}">
+    <label for="region" class="col-md-3 control-label" data-th-text="#{label_customerorder_region}">Region</label>
+    <div class="col-md-6">
+      <!-- Select2 -->
+      <select data-th-field="*{region}" class="form-control dropdown-select-ajax" data-allow-clear="true" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" data-data-placeholder="#{info_select_an_option}">
+          <option data-th-unless="*{region} == null" data-th-value="*{region.id}" data-th-text="*{{region}}" selected="selected">Region</option>
+      </select>
+      <span data-th-classappend="${#fields.hasErrors('region')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('region')}" aria-hidden="true"></span>
+      <span id="region-error" class="help-block" data-th-if="${#fields.hasErrors('region')}" data-th-errors="*{region}">Error message.</span>
+    </div>
+</div>
+<div class="form-group has-error has-feedback" data-z="7c2a7f19" id="customerorder-shipper-field" data-th-classappend="${#fields.hasErrors('shipper')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('ShippersCollectionThymeleafController')}">
+    <label for="shipper" class="col-md-3 control-label" data-th-text="#{label_customerorder_shipper}">Shipper</label>
+    <div class="col-md-6">
+      <!-- Select2 -->
+      <select data-th-field="*{shipper}" class="form-control dropdown-select-ajax" data-allow-clear="true" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" data-data-placeholder="#{info_select_an_option}">
+          <option data-th-unless="*{shipper} == null" data-th-value="*{shipper.id}" data-th-text="*{{shipper}}" selected="selected">Shipper</option>
+      </select>
+      <span data-th-classappend="${#fields.hasErrors('shipper')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('shipper')}" aria-hidden="true"></span>
+      <span id="shipper-error" class="help-block" data-th-if="${#fields.hasErrors('shipper')}" data-th-errors="*{shipper}">Error message.</span>
+    </div>
 </div>
             </fieldset>
 

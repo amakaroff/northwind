@@ -3,6 +3,7 @@
 
 package org.northwind.model;
 
+import java.util.Calendar;
 import org.northwind.model.Category;
 
 privileged aspect Category_Roo_JavaBean {
@@ -41,6 +42,78 @@ privileged aspect Category_Roo_JavaBean {
      */
     public void Category.setVersion(Integer version) {
         this.version = version;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return Calendar
+     */
+    public Calendar Category.getCreatedDate() {
+        return this.createdDate;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param createdDate
+     */
+    public void Category.setCreatedDate(Calendar createdDate) {
+        this.createdDate = createdDate;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return String
+     */
+    public String Category.getCreatedBy() {
+        return this.createdBy;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param createdBy
+     */
+    public void Category.setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return Calendar
+     */
+    public Calendar Category.getModifiedDate() {
+        return this.modifiedDate;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param modifiedDate
+     */
+    public void Category.setModifiedDate(Calendar modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return String
+     */
+    public String Category.getModifiedBy() {
+        return this.modifiedBy;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param modifiedBy
+     */
+    public void Category.setModifiedBy(String modifiedBy) {
+        this.modifiedBy = modifiedBy;
     }
     
 }

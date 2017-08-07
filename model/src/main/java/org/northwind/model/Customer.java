@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
+import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 
 /**
  * = Customer
@@ -17,6 +18,7 @@ import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
 @RooJavaBean
 @RooToString
 @RooJpaEntity
+@RooJaxbEntity
 public class Customer extends Party {
 
     /**

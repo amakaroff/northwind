@@ -16,6 +16,10 @@ privileged aspect Category_Roo_ToString {
         return "Category {" + 
                 "id='" + id + '\'' + 
                 ", version='" + version + '\'' + 
+                ", createdDate='" + createdDate + '\'' + 
+                ", createdBy='" + createdBy + '\'' + 
+                ", modifiedDate='" + modifiedDate + '\'' + 
+                ", modifiedBy='" + modifiedBy + '\'' + 
                 ", ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE='" + ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE + '\'' + 
                 ", ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE='" + ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE + '\'' + "}" + super.toString();
     }

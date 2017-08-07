@@ -103,6 +103,17 @@
     </div>
   </div>
 </div>
+<div class="form-group has-error has-feedback" data-z="def2704" id="product-supplier-field" data-th-classappend="${#fields.hasErrors('supplier')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('SuppliersCollectionThymeleafController')}">
+    <label for="supplier" class="col-md-3 control-label" data-th-text="#{label_product_supplier}">Supplier</label>
+    <div class="col-md-6">
+      <!-- Select2 -->
+      <select data-th-field="*{supplier}" class="form-control dropdown-select-ajax" data-allow-clear="true" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" data-data-placeholder="#{info_select_an_option}">
+          <option data-th-unless="*{supplier} == null" data-th-value="*{supplier.id}" data-th-text="*{{supplier}}" selected="selected">Supplier</option>
+      </select>
+      <span data-th-classappend="${#fields.hasErrors('supplier')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('supplier')}" aria-hidden="true"></span>
+      <span id="supplier-error" class="help-block" data-th-if="${#fields.hasErrors('supplier')}" data-th-errors="*{supplier}">Error message.</span>
+    </div>
+</div>
             </fieldset>
 
 
