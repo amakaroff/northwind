@@ -1,0 +1,193 @@
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-08-02 10:26:47
+project setup --topLevelPackage org.northwind --projectName Northwind --multimodule STANDARD --java 8
+settings add --name spring.roo.jpa.require.schema-object-name --value true
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY --profile dev
+module focus --moduleName model
+enum type --class ~.Period
+enum constant --name QUARTERLY --class ~.Period
+enum constant --name ANNUAL --class ~.Period
+enum type --class ~.Status
+enum constant --name NEWLY --class ~.Status
+enum constant --name SEND_BILL --class ~.Status
+enum constant --name SENT --class ~.Status
+enum constant --name CLOSED --class ~.Status
+enum constant --name CANCELED --class ~.Status
+enum type --class ~.Trimester
+enum constant --name FIRST_TRIM --class ~.Trimester
+enum constant --name SECOND_TRIM --class ~.Trimester
+enum constant --name THIRD_TRIM --class ~.Trimester
+enum constant --name FOURTH_TRIM --class ~.Trimester
+module focus --moduleName model
+settings add --name spring.roo.jpa.require.schema-object-name --value false --force 
+settings add --name spring.roo.jpa.require.schema-object-name --value false --force
+settings add --name spring.roo.jpa.require.schema-object-name --value false --force
+settings add --name spring.roo.jpa.require.schema-object-name --value false --force
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-08-02 10:48:03
+settings list
+module focus --moduleName model 
+// [failed] settings list
+settings list
+entity jpa --class ~.City --readOnly 
+entity jpa --class ~.Country --readOnly 
+entity jpa --class ~.Region --readOnly 
+entity jpa --class ~.Category 
+entity jpa --class ~.OrderDetail
+entity jpa --class ~.Party
+entity jpa --class ~.PurchaseOrder
+entity jpa --class ~.Order
+entity jpa --class ~.Report
+entity jpa --class ~.Shipper
+entity jpa --class ~.SolidProduct
+entity jpa --class ~.Store
+entity jpa --class ~.Supplier
+entity jpa --class ~.Customer --extends ~.Party --force
+entity jpa --class ~.Employee --extends ~.Party --force
+entity jpa --class ~.Product --entityFormatExpression  "#{name} #{code}"
+entity jpa --class ~.CustomerOrder --entityFormatMessage customerorder_format
+// [failed] focus --class ~.Category
+     field string --fieldName name
+     field string --fieldName description
+     field set --fieldName products --type ~.Product --mappedBy category
+focus --class ~.City
+     field string --fieldName description
+     field set --fieldName parties --type ~.Party --mappedBy city
+     field set --fieldName customerOrders --type ~.CustomerOrder --mappedBy city
+     field set --fieldName stores --type ~.Store --mappedBy city
+     field set --fieldName suppliers --type ~.Supplier --mappedBy city
+focus --class ~.Country
+// [failed]      field string --fieldName description
+     field set --fieldName parties --type ~.Party --mappedBy country
+     field set --fieldName regions --type ~.Region --mappedBy country
+     field set --fieldName customerOrders --type ~.CustomerOrder --mappedBy country
+     field set --fieldName stores --type ~.Store --mappedBy country
+// [failed]      field set --fieldName suppliers --type ~.Supplier --mappedBy country
+     focus --class ~.Customer
+     field string --fieldName companyName
+     field string --fieldName contactName
+     field string --fieldName contactTitle
+     field string --fieldName fax
+     field string --fieldName email
+     field set --fieldName customerOrders --type ~.CustomerOrder --mappedBy customer
+     focus --class ~.CustomerOrder
+     field date --fieldName orderDate --type java.util.Calendar --column ORDER_DATE --persistenceType JPA_TIMESTAMP
+     field date --fieldName requiredDate --type java.util.Calendar --persistenceType JPA_TIMESTAMP
+     field date --fieldName shippedDate --type java.util.Calendar --persistenceType JPA_TIMESTAMP
+     field number --fieldName freight --type java.math.BigDecimal
+     field string --fieldName shipName
+     field string --fieldName shipAddress
+     field string --fieldName shipPostalCode
+     field enum --fieldName status --type ~.Status --enumType STRING
+     field string --fieldName shipPhone
+     field date --fieldName invoiceDate --type java.util.Calendar --persistenceType JPA_TIMESTAMP
+     field date --fieldName closeDate --type java.util.Calendar --persistenceType JPA_TIMESTAMP
+     field set --fieldName orderDetails --type ~.OrderDetail --mappedBy customerOrder
+     focus --class ~.Employee
+     field string --fieldName firstName
+     field string --fieldName lastName
+     field string --fieldName title
+     field date --fieldName birthDate --type java.util.Calendar --persistenceType JPA_TIMESTAMP
+     field date --fieldName hireDate --type java.util.Calendar --persistenceType JPA_TIMESTAMP
+     field string --fieldName extension
+     field string --fieldName photo
+     field string --fieldName notes
+     field set --fieldName purchaseOrders --type ~.PurchaseOrder --mappedBy employee
+// [failed]      field set --fieldName customerOrders --type ~.CustomerOrder --mappedBy employee
+     focus --class ~.OrderDetail
+     field number --fieldName unitPrice --type java.math.BigDecimal
+     field number --fieldName quantity --type java.lang.Integer
+     field number --fieldName discount --type java.math.BigDecimal
+     focus --class ~.Party
+     field string --fieldName address
+     field string --fieldName postalCode
+     field string --fieldName phone
+     focus --class ~.Product
+     field string --fieldName name
+     field string --fieldName code
+     field string --fieldName quantityPerUnit
+     field number --fieldName unitCost --type java.math.BigDecimal
+     field number --fieldName unitPrice --type java.math.BigDecimal
+// [failed]      field number --fieldName unitsInStock --type java.lang.Integer
+     field number --fieldName reorderLevel --type java.lang.Integer
+     field other --fieldName discontinued --type java.lang.Boolean
+     field set --fieldName purchaseOrders --type ~.PurchaseOrder --mappedBy product
+     field set --fieldName orderDetails --type ~.OrderDetail --mappedBy product
+     focus --class ~.PurchaseOrder
+     field number --fieldName unitCost --type java.math.BigDecimal
+     field number --fieldName quantity --type java.lang.Integer
+// [failed]      field date --fieldName orderDate --type java.util.Calendar --persistenceType JPA_TIMESTAMP
+     focus --class ~.Region
+// [failed]      field string --fieldName description
+     field set --fieldName cities --type ~.City --mappedBy region
+     field set --fieldName parties --type ~.Party --mappedBy region
+     field set --fieldName customerOrders --type ~.CustomerOrder --mappedBy region
+     field set --fieldName stores --type ~.Store --mappedBy region
+     field set --fieldName suppliers --type ~.Supplier --mappedBy region
+     focus --class ~.Report
+     field string --fieldName type
+     focus --class ~.Shipper
+     field string --fieldName companyName
+     field string --fieldName phone
+     field set --fieldName customerOrders --type ~.CustomerOrder --mappedBy shipper
+     focus --class ~.Store
+     field string --fieldName name
+     field string --fieldName address
+     field string --fieldName postalCode
+     field string --fieldName phone
+     focus --class ~.Supplier
+     field string --fieldName companyName
+     field string --fieldName contactName
+     field string --fieldName contactTitle
+     field string --fieldName address
+     field string --fieldName postalCode
+     field string --fieldName phone
+     field string --fieldName fax
+     field string --fieldName web
+     field set --fieldName products --type ~.Product --mappedBy supplier
+     field set --fieldName stores --type ~.Store --cardinality MANY_TO_MANY
+dto --class ~.ShipperPhoneFormBean
+     field string --fieldName phone
+     dto --class ~.CustomerOrderFormBean --serializable
+     field number --fieldName orderId --type java.lang.Long
+     field number --fieldName employeeId --type java.lang.Long
+     field number --fieldName customerId --type java.lang.Long
+     field date --fieldName orderDate --type java.util.Calendar
+     field string --fieldName employeeName
+     field string --fieldName customerCompanyName
+     field other --fieldName status --type ~.Status
+     field date --fieldName shippedDate --type java.util.Calendar
+     field number --fieldName freight --type java.math.BigDecimal
+entity projection --class model:~.CustomerInfo --entity model:~.Customer --fields id,companyName,email,fax --entityFormatExpression #{companyName}
+repository jpa --entity model:~.Customer --interface repository:~.CustomerRepository --defaultReturnType model:~.CustomerInfo
+repository jpa --all
+finder add --entity model:~.Shipper --name findByCompanyName
+// [failed]      finder add --entity model:~.Region --name findByCountryIdOrderByDescriptionAsc
+     finder add --entity model:~.City --name findByRegionIdOrderByDescriptionAsc
+     finder add --entity model:~.Product --name findByDiscontinuedOrderByNameAsc
+     finder add --entity model:~.Shipper --name findByPhone --formBean model:~.ShipperPhoneFormBean
+// [failed] finder add --entity model:~.Region --name findByCountryIdOrderByDescriptionAsc
+focus --class ~.Region
+     field string --fieldName description
+finder add --entity model:~.Region --name findByCountryIdOrderByDescriptionAsc
+service --all 
+web mvc setup 
+web mvc view setup --type THYMELEAF 
+web mvc templates setup --type THYMELEAF 
+// [failed] web mvc controller --entity model:~.Category --responseType THYMELEAF
+     web mvc controller --entity model:~.Country --responseType THYMELEAF
+     web mvc controller --entity model:~.CustomerOrder --responseType THYMELEAF
+     web mvc controller --entity model:~.Customer --responseType THYMELEAF
+     web mvc controller --entity model:~.Employee --responseType THYMELEAF
+     web mvc controller --entity model:~.Product --responseType THYMELEAF
+     web mvc controller --entity model:~.Shipper --responseType THYMELEAF
+// [failed]      web mvc controller --entity model:~.SoldProduct --responseType THYMELEAF
+     web mvc controller --entity model:~.Store --responseType THYMELEAF
+     web mvc controller --entity model:~.Supplier --responseType THYMELEAF
+     web mvc controller --entity model:~.City --responseType THYMELEAF
+     web mvc controller --entity model:~.Region --responseType THYMELEAF
+     web mvc controller --entity model:~.Region --responseType THYMELEAF
+// [failed] web mvc detail --entity model:~.Category --field products --responseType THYMELEAF --views list,show
+// [failed]      web mvc detail --entity model:~.Product --field purchaseOrders --responseType THYMELEAF --views list,show
+     web mvc detail --entity model:~.Country --responseType THYMELEAF --field regions --views list,show
+web mvc finder --all --responseType THYMELEAF
+web flow --flowName customerOrdersFlow --class ~.CustomerOrderFormBean
+web mvc controller --all --pathPrefix /api
