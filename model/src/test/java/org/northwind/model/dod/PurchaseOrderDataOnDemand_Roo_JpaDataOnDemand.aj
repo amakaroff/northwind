@@ -52,26 +52,6 @@ privileged aspect PurchaseOrderDataOnDemand_Roo_JpaDataOnDemand {
     private PurchaseOrderFactory PurchaseOrderDataOnDemand.factory = new PurchaseOrderFactory();
     
     /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     */
-    public PurchaseOrderDataOnDemand.new(EntityManager entityManager) {
-        this(entityManager, 10);
-    }
-
-    /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     * @param size
-     */
-    public PurchaseOrderDataOnDemand.new(EntityManager entityManager, int size) {
-        setEntityManager(entityManager);
-        setSize(size);
-    }
-
-    /**
      * TODO Auto-generated method documentation
      * 
      * @return Random

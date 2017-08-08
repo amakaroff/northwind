@@ -7,11 +7,5 @@ package org.northwind.model;
  */
 public enum Trimester {
 
-    FIRST_TRIM,
-
-    SECOND_TRIM,
-
-    THIRD_TRIM,
-
-    FOURTH_TRIM
+    FIRST_TRIM, SECOND_TRIM, THIRD_TRIM, FOURTH_TRIM
 }

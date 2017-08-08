@@ -52,26 +52,6 @@ privileged aspect CategoryDataOnDemand_Roo_JpaDataOnDemand {
     private CategoryFactory CategoryDataOnDemand.factory = new CategoryFactory();
     
     /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     */
-    public CategoryDataOnDemand.new(EntityManager entityManager) {
-        this(entityManager, 10);
-    }
-
-    /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     * @param size
-     */
-    public CategoryDataOnDemand.new(EntityManager entityManager, int size) {
-        setEntityManager(entityManager);
-        setSize(size);
-    }
-
-    /**
      * TODO Auto-generated method documentation
      * 
      * @return Random

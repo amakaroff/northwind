@@ -52,26 +52,6 @@ privileged aspect ReportDataOnDemand_Roo_JpaDataOnDemand {
     private ReportFactory ReportDataOnDemand.factory = new ReportFactory();
     
     /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     */
-    public ReportDataOnDemand.new(EntityManager entityManager) {
-        this(entityManager, 10);
-    }
-
-    /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     * @param size
-     */
-    public ReportDataOnDemand.new(EntityManager entityManager, int size) {
-        setEntityManager(entityManager);
-        setSize(size);
-    }
-
-    /**
      * TODO Auto-generated method documentation
      * 
      * @return Random

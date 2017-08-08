@@ -67,17 +67,6 @@
       <span id="city-error" class="help-block" data-th-if="${#fields.hasErrors('city')}" data-th-errors="*{city}">Error message.</span>
     </div>
 </div>
-<div class="form-group has-error has-feedback" data-z="95a27e8" id="store-country-field" data-th-classappend="${#fields.hasErrors('country')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('CountriesCollectionThymeleafController')}">
-    <label for="country" class="col-md-3 control-label" data-th-text="#{label_store_country}">Country</label>
-    <div class="col-md-6">
-      <!-- Select2 -->
-      <select data-th-field="*{country}" class="form-control dropdown-select-ajax" data-allow-clear="true" data-data-ajax--url="${collectionLink.to('select2')}" data-ajax--cache="true" data-ajax--delay="250" data-ajax--data-type="json" data-data-placeholder="#{info_select_an_option}">
-          <option data-th-unless="*{country} == null" data-th-value="*{country.id}" data-th-text="*{{country}}" selected="selected">Country</option>
-      </select>
-      <span data-th-classappend="${#fields.hasErrors('country')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('country')}" aria-hidden="true"></span>
-      <span id="country-error" class="help-block" data-th-if="${#fields.hasErrors('country')}" data-th-errors="*{country}">Error message.</span>
-    </div>
-</div>
 <div class="form-group has-error has-feedback" data-z="f4f9aa76" id="store-region-field" data-th-classappend="${#fields.hasErrors('region')}? 'has-error has-feedback'" data-th-class="form-group" data-th-with="collectionLink=${@linkBuilder.of('RegionsCollectionThymeleafController')}">
     <label for="region" class="col-md-3 control-label" data-th-text="#{label_store_region}">Region</label>
     <div class="col-md-6">
@@ -95,14 +84,6 @@
     <input id="name" name="name" data-th-value="*{{name}}" type="text" class="form-control" placeholder="name" data-th-placeholder="#{label_store_name}" data-toggle="tooltip" aria-describedby="nameStatus" />
       <span data-th-classappend="${#fields.hasErrors('name')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('name')}" aria-hidden="true"></span>
       <span id="name-error" class="help-block" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" data-z="ba631428" id="store-address-field" data-th-classappend="${#fields.hasErrors('address')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="address" class="col-md-3 control-label" data-th-text="#{label_store_address}">address</label>
-  <div class="col-md-6">
-    <input id="address" name="address" data-th-value="*{{address}}" type="text" class="form-control" placeholder="address" data-th-placeholder="#{label_store_address}" data-toggle="tooltip" aria-describedby="addressStatus" />
-      <span data-th-classappend="${#fields.hasErrors('address')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('address')}" aria-hidden="true"></span>
-      <span id="address-error" class="help-block" data-th-if="${#fields.hasErrors('address')}" data-th-errors="*{address}">Error message.</span>
   </div>
 </div>
 <div class="form-group has-error has-feedback" data-z="a7c0ba96" id="store-postalcode-field" data-th-classappend="${#fields.hasErrors('postalCode')}? 'has-error has-feedback'" data-th-class="form-group">

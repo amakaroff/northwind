@@ -113,68 +113,6 @@
       <span id="region-error" class="help-block" data-th-if="${#fields.hasErrors('region')}" data-th-errors="*{region}">Error message.</span>
     </div>
 </div>
-<div class="form-group has-error has-feedback" data-z="1626c585" id="employee-firstname-field" data-th-classappend="${#fields.hasErrors('firstName')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="firstName" class="col-md-3 control-label" data-th-text="#{label_employee_firstname}">firstName</label>
-  <div class="col-md-6">
-    <input id="firstName" name="firstName" data-th-value="*{{firstName}}" type="text" class="form-control" placeholder="firstName" data-th-placeholder="#{label_employee_firstname}" data-toggle="tooltip" aria-describedby="firstNameStatus" />
-      <span data-th-classappend="${#fields.hasErrors('firstName')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('firstName')}" aria-hidden="true"></span>
-      <span id="firstName-error" class="help-block" data-th-if="${#fields.hasErrors('firstName')}" data-th-errors="*{firstName}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" data-z="6a3fdb39" id="employee-lastname-field" data-th-classappend="${#fields.hasErrors('lastName')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="lastName" class="col-md-3 control-label" data-th-text="#{label_employee_lastname}">lastName</label>
-  <div class="col-md-6">
-    <input id="lastName" name="lastName" data-th-value="*{{lastName}}" type="text" class="form-control" placeholder="lastName" data-th-placeholder="#{label_employee_lastname}" data-toggle="tooltip" aria-describedby="lastNameStatus" />
-      <span data-th-classappend="${#fields.hasErrors('lastName')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('lastName')}" aria-hidden="true"></span>
-      <span id="lastName-error" class="help-block" data-th-if="${#fields.hasErrors('lastName')}" data-th-errors="*{lastName}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" data-z="f1dcccc5" id="employee-title-field" data-th-classappend="${#fields.hasErrors('title')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="title" class="col-md-3 control-label" data-th-text="#{label_employee_title}">title</label>
-  <div class="col-md-6">
-    <input id="title" name="title" data-th-value="*{{title}}" type="text" class="form-control" placeholder="title" data-th-placeholder="#{label_employee_title}" data-toggle="tooltip" aria-describedby="titleStatus" />
-      <span data-th-classappend="${#fields.hasErrors('title')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('title')}" aria-hidden="true"></span>
-      <span id="title-error" class="help-block" data-th-if="${#fields.hasErrors('title')}" data-th-errors="*{title}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" id="employee-birthdate-field" data-z="ed569745" data-th-classappend="${#fields.hasErrors('birthDate')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="birthDate" class="col-md-3 control-label" data-th-text="#{label_employee_birthdate}">birthDate</label>
-  <div class="col-md-3">
-    <input id="birthDate" name="birthDate" data-th-value="*{{birthDate}}" type="text" class="form-control datetimepicker" placeholder="birthDate" data-th-placeholder="#{label_employee_birthdate}" data-th-attr="data-dateformat=${birthDate_date_format}" data-toggle="tooltip" /> <span data-th-classappend="${#fields.hasErrors('birthDate')}? 'glyphicon glyphicon-remove form-control-feedback'" data-th-if="${#fields.hasErrors('birthDate')}" aria-hidden="true"></span>
-     <span id="birthDate-error" class="help-block" data-th-if="${#fields.hasErrors('birthDate')}" data-th-errors="*{birthDate}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" id="employee-hiredate-field" data-z="47bd8f19" data-th-classappend="${#fields.hasErrors('hireDate')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="hireDate" class="col-md-3 control-label" data-th-text="#{label_employee_hiredate}">hireDate</label>
-  <div class="col-md-3">
-    <input id="hireDate" name="hireDate" data-th-value="*{{hireDate}}" type="text" class="form-control datetimepicker" placeholder="hireDate" data-th-placeholder="#{label_employee_hiredate}" data-th-attr="data-dateformat=${hireDate_date_format}" data-toggle="tooltip" /> <span data-th-classappend="${#fields.hasErrors('hireDate')}? 'glyphicon glyphicon-remove form-control-feedback'" data-th-if="${#fields.hasErrors('hireDate')}" aria-hidden="true"></span>
-     <span id="hireDate-error" class="help-block" data-th-if="${#fields.hasErrors('hireDate')}" data-th-errors="*{hireDate}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" data-z="eae908e5" id="employee-extension-field" data-th-classappend="${#fields.hasErrors('extension')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="extension" class="col-md-3 control-label" data-th-text="#{label_employee_extension}">extension</label>
-  <div class="col-md-6">
-    <input id="extension" name="extension" data-th-value="*{{extension}}" type="text" class="form-control" placeholder="extension" data-th-placeholder="#{label_employee_extension}" data-toggle="tooltip" aria-describedby="extensionStatus" />
-      <span data-th-classappend="${#fields.hasErrors('extension')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('extension')}" aria-hidden="true"></span>
-      <span id="extension-error" class="help-block" data-th-if="${#fields.hasErrors('extension')}" data-th-errors="*{extension}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" data-z="1568b985" id="employee-photo-field" data-th-classappend="${#fields.hasErrors('photo')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="photo" class="col-md-3 control-label" data-th-text="#{label_employee_photo}">photo</label>
-  <div class="col-md-6">
-    <input id="photo" name="photo" data-th-value="*{{photo}}" type="text" class="form-control" placeholder="photo" data-th-placeholder="#{label_employee_photo}" data-toggle="tooltip" aria-describedby="photoStatus" />
-      <span data-th-classappend="${#fields.hasErrors('photo')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('photo')}" aria-hidden="true"></span>
-      <span id="photo-error" class="help-block" data-th-if="${#fields.hasErrors('photo')}" data-th-errors="*{photo}">Error message.</span>
-  </div>
-</div>
-<div class="form-group has-error has-feedback" data-z="b4c8e3a5" id="employee-notes-field" data-th-classappend="${#fields.hasErrors('notes')}? 'has-error has-feedback'" data-th-class="form-group">
-  <label for="notes" class="col-md-3 control-label" data-th-text="#{label_employee_notes}">notes</label>
-  <div class="col-md-6">
-    <input id="notes" name="notes" data-th-value="*{{notes}}" type="text" class="form-control" placeholder="notes" data-th-placeholder="#{label_employee_notes}" data-toggle="tooltip" aria-describedby="notesStatus" />
-      <span data-th-classappend="${#fields.hasErrors('notes')}? 'glyphicon glyphicon-remove form-control-feedback'" class="glyphicon glyphicon-remove form-control-feedback" data-th-if="${#fields.hasErrors('notes')}" aria-hidden="true"></span>
-      <span id="notes-error" class="help-block" data-th-if="${#fields.hasErrors('notes')}" data-th-errors="*{notes}">Error message.</span>
-  </div>
-</div>
              </fieldset>
 
 

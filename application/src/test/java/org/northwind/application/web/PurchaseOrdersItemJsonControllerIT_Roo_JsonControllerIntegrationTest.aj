@@ -3,23 +3,15 @@
 
 package org.northwind.application.web;
 
-import io.springlets.boot.test.autoconfigure.web.servlet.SpringletsWebMvcTest;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.northwind.application.web.PurchaseOrdersItemJsonController;
 import org.northwind.application.web.PurchaseOrdersItemJsonControllerIT;
 import org.northwind.model.dod.PurchaseOrderFactory;
 import org.northwind.service.api.PurchaseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 privileged aspect PurchaseOrdersItemJsonControllerIT_Roo_JsonControllerIntegrationTest {
-    
-    declare @type: PurchaseOrdersItemJsonControllerIT: @RunWith(SpringRunner.class);
-    
-    declare @type: PurchaseOrdersItemJsonControllerIT: @SpringletsWebMvcTest(controllers = PurchaseOrdersItemJsonController.class, secure = false);
     
     /**
      * TODO Auto-generated attribute documentation

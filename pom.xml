@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <!-- Spring IO Platform is the parent of the generated application to be able to
       use Spring Boot and all its default configuration -->
     <parent>
@@ -25,37 +26,37 @@
         <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
         <java.version>1.8</java.version>
         <springlets.version>1.2.0.RC1</springlets.version>
+        <tracee.version>1.1.2</tracee.version>
+        <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
+        <thymeleaf-data-dialect.version>2.0.1</thymeleaf-data-dialect.version>
+        <dynamicjasper.version>5.0.11</dynamicjasper.version>
+        <dynamicjasper-fonts.version>1.0</dynamicjasper-fonts.version>
+        <bootstrap.version>3.3.6</bootstrap.version>
+        <datatables.version>1.10.12</datatables.version>
+        <datatables-bs.version>1.10.11</datatables-bs.version>
+        <datatables-buttons.version>1.1.2</datatables-buttons.version>
+        <datatables-buttons-bs.version>1.1.2</datatables-buttons-bs.version>
+        <datatables-responsive.version>2.0.2</datatables-responsive.version>
+        <datatables-responsive-bs.version>2.0.2</datatables-responsive-bs.version>
+        <datatables-select.version>1.1.2</datatables-select.version>
+        <datatables-select-bs.version>1.1.2</datatables-select-bs.version>
+        <datatables-checkboxes.version>1.1.2</datatables-checkboxes.version>
+        <datatables-mark.version>2.0.0</datatables-mark.version>
+        <datetimepicker.version>2.5.4</datetimepicker.version>
+        <fontawesome.version>4.6.2</fontawesome.version>
+        <jquery.version>1.12.3</jquery.version>
+        <jquery-inputmask.version>3.3.1</jquery-inputmask.version>
+        <jquery-validation.version>1.15.0</jquery-validation.version>
+        <momentjs.version>2.13.0</momentjs.version>
+        <select2.version>4.0.3</select2.version>
+        <select2-bootstrap-theme.version>0.1.0-beta.7</select2-bootstrap-theme.version>
+        <respond.version>1.4.2</respond.version>
+        <html5shiv.version>3.7.3</html5shiv.version>
+        <bootstrap.ie10-viewport-bug-workaround.version>1.0.3</bootstrap.ie10-viewport-bug-workaround.version>
+        <cxf.version>3.1.8</cxf.version>
+        <thymeleaf-extras-springsecurity4.version>3.0.0.RELEASE</thymeleaf-extras-springsecurity4.version>
         <start-class>org.northwind.NorthwindApplication</start-class>
-    <tracee.version>1.1.2</tracee.version>
-    <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
-    <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
-    <thymeleaf-data-dialect.version>2.0.1</thymeleaf-data-dialect.version>
-    <dynamicjasper.version>5.0.11</dynamicjasper.version>
-    <dynamicjasper-fonts.version>1.0</dynamicjasper-fonts.version>
-    <bootstrap.version>3.3.6</bootstrap.version>
-    <datatables.version>1.10.12</datatables.version>
-    <datatables-bs.version>1.10.11</datatables-bs.version>
-    <datatables-buttons.version>1.1.2</datatables-buttons.version>
-    <datatables-buttons-bs.version>1.1.2</datatables-buttons-bs.version>
-    <datatables-responsive.version>2.0.2</datatables-responsive.version>
-    <datatables-responsive-bs.version>2.0.2</datatables-responsive-bs.version>
-    <datatables-select.version>1.1.2</datatables-select.version>
-    <datatables-select-bs.version>1.1.2</datatables-select-bs.version>
-    <datatables-checkboxes.version>1.1.2</datatables-checkboxes.version>
-    <datatables-mark.version>2.0.0</datatables-mark.version>
-    <datetimepicker.version>2.5.4</datetimepicker.version>
-    <fontawesome.version>4.6.2</fontawesome.version>
-    <jquery.version>1.12.3</jquery.version>
-    <jquery-inputmask.version>3.3.1</jquery-inputmask.version>
-    <jquery-validation.version>1.15.0</jquery-validation.version>
-    <momentjs.version>2.13.0</momentjs.version>
-    <select2.version>4.0.3</select2.version>
-    <select2-bootstrap-theme.version>0.1.0-beta.7</select2-bootstrap-theme.version>
-    <respond.version>1.4.2</respond.version>
-    <html5shiv.version>3.7.3</html5shiv.version>
-    <bootstrap.ie10-viewport-bug-workaround.version>1.0.3</bootstrap.ie10-viewport-bug-workaround.version>
-    <cxf.version>3.1.8</cxf.version>
-    <thymeleaf-extras-springsecurity4.version>3.0.0.RELEASE</thymeleaf-extras-springsecurity4.version>
     </properties>
 
     <modules>
@@ -66,7 +67,6 @@
         <module>service-impl</module>
         <module>application</module>
     </modules>
-
     <repositories>
         <!-- Maven Snapshots Repository -->
         <repository>
@@ -90,6 +90,7 @@
 
     <dependencyManagement>
         <dependencies>
+
             <!-- Spring Roo annotations -->
             <dependency>
                 <groupId>org.springframework.roo</groupId>
@@ -140,36 +141,31 @@
                 <version>${springlets.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjtools</artifactId>
-                <version>${aspectj.version}</version>
-            </dependency>
-        <dependency>
                 <groupId>io.tracee.binding</groupId>
                 <artifactId>tracee-springmvc</artifactId>
                 <version>${tracee.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.springlets</groupId>
                 <artifactId>springlets-boot-starter-web</artifactId>
                 <version>${springlets.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>com.github.mxab.thymeleaf.extras</groupId>
                 <artifactId>thymeleaf-extras-data-attribute</artifactId>
                 <version>${thymeleaf-data-dialect.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>ar.com.fdvs</groupId>
                 <artifactId>DynamicJasper</artifactId>
                 <version>${dynamicjasper.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>ar.com.fdvs</groupId>
                 <artifactId>DynamicJasper-core-fonts</artifactId>
                 <version>${dynamicjasper-fonts.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>org.webjars.bower</groupId>
                 <artifactId>bootstrap</artifactId>
                 <version>${bootstrap.version}</version>
@@ -295,58 +291,65 @@
                 <artifactId>ie10-viewport-bug-workaround</artifactId>
                 <version>${bootstrap.ie10-viewport-bug-workaround.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.springlets</groupId>
                 <artifactId>springlets-boot-starter-webflow</artifactId>
                 <version>${springlets.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
                 <version>${cxf.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.tracee.binding</groupId>
                 <artifactId>tracee-jaxws</artifactId>
                 <version>${tracee.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.tracee.binding</groupId>
                 <artifactId>tracee-cxf</artifactId>
                 <version>${tracee.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.springlets</groupId>
                 <artifactId>springlets-boot-starter-mail</artifactId>
                 <version>${springlets.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.springlets</groupId>
                 <artifactId>springlets-mail</artifactId>
                 <version>${springlets.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.springlets</groupId>
                 <artifactId>springlets-boot-starter-authentication</artifactId>
                 <version>${springlets.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.springlets</groupId>
                 <artifactId>springlets-boot-starter-data-jpa</artifactId>
                 <version>${springlets.version}</version>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>org.northwind</groupId>
                 <artifactId>model</artifactId>
                 <version>${project.version}</version>
                 <type>test-jar</type>
                 <scope>test</scope>
             </dependency>
-        <dependency>
+            <dependency>
                 <groupId>io.springlets</groupId>
                 <artifactId>springlets-boot-starter-test</artifactId>
                 <version>${springlets.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/javax.sql/jdbc-stdext -->
+            <dependency>
+                <groupId>javax.sql</groupId>
+                <artifactId>jdbc-stdext</artifactId>
+                <version>2.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -354,6 +357,7 @@
     <build>
         <pluginManagement>
             <plugins>
+
                 <!-- Compiler plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -387,13 +391,13 @@
                             </goals>
                         </execution>
                     </executions>
-                    <!--<dependencies>
+                    <dependencies>
                         <dependency>
                             <groupId>org.aspectj</groupId>
                             <artifactId>aspectjtools</artifactId>
                             <version>${aspectj.version}</version>
                         </dependency>
-                    </dependencies>-->
+                    </dependencies>
                 </plugin>
 
                 <!-- Surefire plugin configuration -->
@@ -406,7 +410,6 @@
                         </excludes>
                     </configuration>
                 </plugin>
-
                 <!-- Asciidoclet plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -454,7 +457,7 @@
                         <excludeDevtools>true</excludeDevtools>
                     </configuration>
                 </plugin>
-            <plugin>
+                <plugin>
                     <groupId>com.querydsl</groupId>
                     <artifactId>querydsl-maven-plugin</artifactId>
                     <version>${querydsl.version}</version>
@@ -466,12 +469,12 @@
                                 <goal>jpa-export</goal>
                             </goals>
                             <configuration>
-              <targetFolder>target/generated-sources/java</targetFolder>
-              <packages>
-                <package>org.springframework.data.jpa.domain.support</package>
-              <package>org.northwind.model</package>
+                                <targetFolder>target/generated-sources/java</targetFolder>
+                                <packages>
+                                    <package>org.springframework.data.jpa.domain.support</package>
+                                    <package>org.northwind.model</package>
                                 </packages>
-            </configuration>
+                            </configuration>
                         </execution>
                         <execution>
                             <id>compile-qtypes</id>
@@ -479,20 +482,20 @@
                                 <goal>compile</goal>
                             </goals>
                             <configuration>
-              <sourceFolder>target/generated-sources/java</sourceFolder>
-            </configuration>
+                                <sourceFolder>target/generated-sources/java</sourceFolder>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
-            <plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <configuration>
-			<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
-			<excludes>
-        <exclude>**/*_Roo_*</exclude>
-      </excludes>
-		</configuration>
+                        <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+                        <excludes>
+                            <exclude>**/*_Roo_*</exclude>
+                        </excludes>
+                    </configuration>
                     <executions>
                         <execution>
                             <goals>

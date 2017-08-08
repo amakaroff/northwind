@@ -3,18 +3,6 @@
 
 package org.northwind.model;
 
-import java.util.Set;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import org.northwind.model.City;
-import org.northwind.model.Product;
-import org.northwind.model.Region;
-import org.northwind.model.Store;
 import org.northwind.model.Supplier;
 import org.northwind.model.Supplier_Roo_Jaxb_Entity;
 
@@ -24,40 +12,5 @@ privileged aspect Supplier_Roo_Jaxb_Entity {
      * This Aspect takes the lower precedence
      */
     declare precedence: *, Supplier_Roo_Jaxb_Entity;
-    
-    declare @type: Supplier: @XmlRootElement(name = "supplier", namespace = "http://ws.northwind.org/");
-    
-    declare @method: public Set<Product> Supplier.getProducts(): @XmlIDREF;
-    
-    declare @method: public Set<Product> Supplier.getProducts(): @XmlElement(name = "product");
-    
-    declare @method: public Set<Product> Supplier.getProducts(): @XmlElementWrapper(name = "products");
-    
-    declare @method: public Set<Store> Supplier.getStores(): @XmlIDREF;
-    
-    declare @method: public Set<Store> Supplier.getStores(): @XmlElement(name = "store");
-    
-    declare @method: public Set<Store> Supplier.getStores(): @XmlElementWrapper(name = "stores");
-    
-    declare @method: public City Supplier.getCity(): @XmlIDREF;
-    
-    declare @method: public City Supplier.getCity(): @XmlElement(name = "city");
-    
-    declare @method: public Region Supplier.getRegion(): @XmlIDREF;
-    
-    declare @method: public Region Supplier.getRegion(): @XmlElement(name = "region");
-    
-    declare @method: public Long Supplier.getId(): @XmlTransient;
-    
-    /**
-     * Must return an unique ID across all entities
-     * 
-     * @return String
-     */
-    @XmlID
-    @XmlAttribute(name = "id")
-    public String Supplier.getXmlIdentityInfo() {
-        return getClass().getName() + ":" + getId();
-    }
     
 }

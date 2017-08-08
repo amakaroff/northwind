@@ -52,26 +52,6 @@ privileged aspect OrderDetailDataOnDemand_Roo_JpaDataOnDemand {
     private OrderDetailFactory OrderDetailDataOnDemand.factory = new OrderDetailFactory();
     
     /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     */
-    public OrderDetailDataOnDemand.new(EntityManager entityManager) {
-        this(entityManager, 10);
-    }
-
-    /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     * @param size
-     */
-    public OrderDetailDataOnDemand.new(EntityManager entityManager, int size) {
-        setEntityManager(entityManager);
-        setSize(size);
-    }
-
-    /**
      * TODO Auto-generated method documentation
      * 
      * @return Random

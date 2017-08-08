@@ -11,27 +11,15 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.northwind.application.config.SpringDataJpaDetachableRepositoryConfiguration;
 import org.northwind.model.Country;
 import org.northwind.model.dod.CountryDataOnDemand;
-import org.northwind.model.dod.DataOnDemandConfiguration;
 import org.northwind.repository.CountryRepository;
 import org.northwind.repository.CountryRepositoryIT;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 privileged aspect CountryRepositoryIT_Roo_RepositoryJpaIntegrationTest {
-    
-    declare @type: CountryRepositoryIT: @RunWith(SpringRunner.class);
-    
-    declare @type: CountryRepositoryIT: @DataJpaTest;
-    
-    declare @type: CountryRepositoryIT: @Import({ DataOnDemandConfiguration.class, SpringDataJpaDetachableRepositoryConfiguration.class });
     
     /**
      * TODO Auto-generated attribute documentation

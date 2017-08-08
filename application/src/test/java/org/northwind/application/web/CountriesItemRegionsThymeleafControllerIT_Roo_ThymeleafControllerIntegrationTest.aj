@@ -3,27 +3,19 @@
 
 package org.northwind.application.web;
 
-import io.springlets.boot.test.autoconfigure.web.servlet.SpringletsWebMvcTest;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.northwind.application.web.CountriesItemRegionsThymeleafController;
 import org.northwind.application.web.CountriesItemRegionsThymeleafControllerIT;
 import org.northwind.model.dod.CountryFactory;
 import org.northwind.service.api.CountryService;
 import org.northwind.service.api.CustomerOrderService;
 import org.northwind.service.api.PartyService;
 import org.northwind.service.api.RegionService;
-import org.northwind.service.api.StoreService;
+import org.northwind.service.api.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 privileged aspect CountriesItemRegionsThymeleafControllerIT_Roo_ThymeleafControllerIntegrationTest {
-    
-    declare @type: CountriesItemRegionsThymeleafControllerIT: @RunWith(SpringRunner.class);
-    
-    declare @type: CountriesItemRegionsThymeleafControllerIT: @SpringletsWebMvcTest(controllers = CountriesItemRegionsThymeleafController.class, secure = false);
     
     /**
      * TODO Auto-generated attribute documentation
@@ -65,7 +57,7 @@ privileged aspect CountriesItemRegionsThymeleafControllerIT_Roo_ThymeleafControl
      * 
      */
     @MockBean
-    private StoreService CountriesItemRegionsThymeleafControllerIT.storeServiceService;
+    private SupplierService CountriesItemRegionsThymeleafControllerIT.supplierServiceService;
     
     /**
      * TODO Auto-generated attribute documentation
@@ -157,19 +149,19 @@ privileged aspect CountriesItemRegionsThymeleafControllerIT_Roo_ThymeleafControl
     /**
      * TODO Auto-generated method documentation
      * 
-     * @return StoreService
+     * @return SupplierService
      */
-    public StoreService CountriesItemRegionsThymeleafControllerIT.getStoreServiceService() {
-        return storeServiceService;
+    public SupplierService CountriesItemRegionsThymeleafControllerIT.getSupplierServiceService() {
+        return supplierServiceService;
     }
     
     /**
      * TODO Auto-generated method documentation
      * 
-     * @param storeServiceService
+     * @param supplierServiceService
      */
-    public void CountriesItemRegionsThymeleafControllerIT.setStoreServiceService(StoreService storeServiceService) {
-        this.storeServiceService = storeServiceService;
+    public void CountriesItemRegionsThymeleafControllerIT.setSupplierServiceService(SupplierService supplierServiceService) {
+        this.supplierServiceService = supplierServiceService;
     }
     
     /**

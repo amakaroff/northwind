@@ -3,14 +3,6 @@
 
 package org.northwind.model;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import org.northwind.model.Employee;
-import org.northwind.model.Product;
 import org.northwind.model.PurchaseOrder;
 import org.northwind.model.PurchaseOrder_Roo_Jaxb_Entity;
 
@@ -20,28 +12,5 @@ privileged aspect PurchaseOrder_Roo_Jaxb_Entity {
      * This Aspect takes the lower precedence
      */
     declare precedence: *, PurchaseOrder_Roo_Jaxb_Entity;
-    
-    declare @type: PurchaseOrder: @XmlRootElement(name = "purchaseorder", namespace = "http://ws.northwind.org/");
-    
-    declare @method: public Employee PurchaseOrder.getEmployee(): @XmlIDREF;
-    
-    declare @method: public Employee PurchaseOrder.getEmployee(): @XmlElement(name = "employee");
-    
-    declare @method: public Product PurchaseOrder.getProduct(): @XmlIDREF;
-    
-    declare @method: public Product PurchaseOrder.getProduct(): @XmlElement(name = "product");
-    
-    declare @method: public Long PurchaseOrder.getId(): @XmlTransient;
-    
-    /**
-     * Must return an unique ID across all entities
-     * 
-     * @return String
-     */
-    @XmlID
-    @XmlAttribute(name = "id")
-    public String PurchaseOrder.getXmlIdentityInfo() {
-        return getClass().getName() + ":" + getId();
-    }
     
 }

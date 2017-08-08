@@ -1,6 +1,8 @@
 package org.northwind.repository;
 import org.northwind.model.Category;
 import org.springframework.roo.addon.layers.repository.jpa.annotations.RooJpaRepository;
+import io.springlets.data.jpa.repository.DetachableJpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * = CategoryRepository
@@ -8,5 +10,6 @@ import org.springframework.roo.addon.layers.repository.jpa.annotations.RooJpaRep
  *
  */
 @RooJpaRepository(entity = Category.class)
-public interface CategoryRepository {
+@Transactional(readOnly = true)
+public interface CategoryRepository extends DetachableJpaRepository<Category, Long>, CategoryRepositoryCustom {
 }

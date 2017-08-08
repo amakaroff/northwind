@@ -14,27 +14,15 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.northwind.application.config.SpringDataJpaDetachableRepositoryConfiguration;
 import org.northwind.model.PurchaseOrder;
-import org.northwind.model.dod.DataOnDemandConfiguration;
 import org.northwind.model.dod.PurchaseOrderDataOnDemand;
 import org.northwind.repository.PurchaseOrderRepository;
 import org.northwind.repository.PurchaseOrderRepositoryIT;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 privileged aspect PurchaseOrderRepositoryIT_Roo_RepositoryJpaIntegrationTest {
-    
-    declare @type: PurchaseOrderRepositoryIT: @RunWith(SpringRunner.class);
-    
-    declare @type: PurchaseOrderRepositoryIT: @DataJpaTest;
-    
-    declare @type: PurchaseOrderRepositoryIT: @Import({ DataOnDemandConfiguration.class, SpringDataJpaDetachableRepositoryConfiguration.class });
     
     /**
      * TODO Auto-generated attribute documentation

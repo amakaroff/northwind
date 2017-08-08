@@ -7,7 +7,5 @@ package org.northwind.model;
  */
 public enum Period {
 
-    QUARTERLY,
-
-    ANNUAL
+    QUARTERLY
 }

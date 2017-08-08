@@ -13,6 +13,11 @@ import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
+import java.util.Objects;
+import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * = OrderDetail
@@ -24,6 +29,9 @@ import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 @RooJpaEntity
 @RooEquals(isJpaEntity = true)
 @RooJaxbEntity
+@Entity
+@EntityFormat
+@XmlRootElement(name = "orderdetail", namespace = "http://ws.northwind.org/")
 public class OrderDetail {
 
     /**
@@ -77,4 +85,192 @@ public class OrderDetail {
     @ManyToOne(fetch = FetchType.LAZY)
     @EntityFormat
     private Product product;
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    public static final String ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE = "The given Iterable of items to add can't be null!";
+
+    /**
+     * TODO Auto-generated attribute documentation
+     *
+     */
+    public static final String ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE = "The given Iterable of items to add can't be null!";
+
+    /**
+     * This `equals` implementation is specific for JPA entities and uses
+     * the entity identifier for it, following the article in
+     * https://vladmihalcea.com/2016/06/06/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+     *
+     * @param obj
+     * @return Boolean
+     */
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        // instanceof is false if the instance is null
+        if (!(obj instanceof OrderDetail)) {
+            return false;
+        }
+        return getId() != null && Objects.equals(getId(), ((OrderDetail) obj).getId());
+    }
+
+    /**
+     * This `hashCode` implementation is specific for JPA entities and uses a fixed `int` value to be able
+     * to identify the entity in collections after a new id is assigned to the entity, following the article in
+     * https://vladmihalcea.com/2016/06/06/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+     *
+     * @return Integer
+     */
+    public int hashCode() {
+        return 31;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return Long
+     */
+    public Long getId() {
+        return this.id;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param id
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return Integer
+     */
+    public Integer getVersion() {
+        return this.version;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param version
+     */
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return CustomerOrder
+     */
+    public CustomerOrder getCustomerOrder() {
+        return this.customerOrder;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param customerOrder
+     */
+    public void setCustomerOrder(CustomerOrder customerOrder) {
+        this.customerOrder = customerOrder;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return BigDecimal
+     */
+    public BigDecimal getUnitPrice() {
+        return this.unitPrice;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param unitPrice
+     */
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return Integer
+     */
+    public Integer getQuantity() {
+        return this.quantity;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param quantity
+     */
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return BigDecimal
+     */
+    public BigDecimal getDiscount() {
+        return this.discount;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param discount
+     */
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return Product
+     */
+    public Product getProduct() {
+        return this.product;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param product
+     */
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return String
+     */
+    public String toString() {
+        return "OrderDetail {" + "id='" + id + '\'' + ", version='" + version + '\'' + ", unitPrice='" + unitPrice + '\'' + ", quantity='" + quantity + '\'' + ", discount='" + discount + '\'' + ", ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE='" + ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE + '\'' + ", ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE='" + ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE + '\'' + "}" + super.toString();
+    }
+
+    /**
+     * Must return an unique ID across all entities
+     *
+     * @return String
+     */
+    @XmlID
+    @XmlAttribute(name = "id")
+    public String getXmlIdentityInfo() {
+        return getClass().getName() + ":" + getId();
+    }
 }

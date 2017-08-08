@@ -3,15 +3,6 @@
 
 package org.northwind.model;
 
-import java.util.Set;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import org.northwind.model.CustomerOrder;
 import org.northwind.model.Shipper;
 import org.northwind.model.Shipper_Roo_Jaxb_Entity;
 
@@ -21,26 +12,5 @@ privileged aspect Shipper_Roo_Jaxb_Entity {
      * This Aspect takes the lower precedence
      */
     declare precedence: *, Shipper_Roo_Jaxb_Entity;
-    
-    declare @type: Shipper: @XmlRootElement(name = "shipper", namespace = "http://ws.northwind.org/");
-    
-    declare @method: public Set<CustomerOrder> Shipper.getCustomerOrders(): @XmlIDREF;
-    
-    declare @method: public Set<CustomerOrder> Shipper.getCustomerOrders(): @XmlElement(name = "customerorder");
-    
-    declare @method: public Set<CustomerOrder> Shipper.getCustomerOrders(): @XmlElementWrapper(name = "customerorders");
-    
-    declare @method: public Long Shipper.getId(): @XmlTransient;
-    
-    /**
-     * Must return an unique ID across all entities
-     * 
-     * @return String
-     */
-    @XmlID
-    @XmlAttribute(name = "id")
-    public String Shipper.getXmlIdentityInfo() {
-        return getClass().getName() + ":" + getId();
-    }
     
 }

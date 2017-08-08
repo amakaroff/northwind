@@ -1,6 +1,7 @@
 package org.northwind.model;
 import org.springframework.roo.addon.dto.annotations.RooDTO;
 import org.springframework.roo.addon.javabean.annotations.RooJavaBean;
+import io.springlets.format.EntityFormat;
 
 /**
  * = ShipperPhoneFormBean
@@ -9,6 +10,7 @@ import org.springframework.roo.addon.javabean.annotations.RooJavaBean;
  */
 @RooDTO
 @RooJavaBean
+@EntityFormat
 public class ShipperPhoneFormBean {
 
     /**
@@ -16,4 +18,22 @@ public class ShipperPhoneFormBean {
      *
      */
     private String phone;
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return String
+     */
+    public String getPhone() {
+        return this.phone;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param phone
+     */
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }

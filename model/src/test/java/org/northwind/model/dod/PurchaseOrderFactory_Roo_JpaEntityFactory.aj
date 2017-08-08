@@ -4,7 +4,9 @@
 package org.northwind.model.dod;
 
 import java.math.BigDecimal;
-import org.northwind.model.Employee;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import org.northwind.model.CustomerOrder;
 import org.northwind.model.Product;
 import org.northwind.model.PurchaseOrder;
 import org.northwind.model.dod.PurchaseOrderFactory;
@@ -20,6 +22,7 @@ privileged aspect PurchaseOrderFactory_Roo_JpaEntityFactory {
     public PurchaseOrder PurchaseOrderFactory.create(int index) {
         PurchaseOrder obj = new PurchaseOrder();
         setEmployee(obj, index);
+        setOrderDate(obj, index);
         setProduct(obj, index);
         setQuantity(obj, index);
         setUnitCost(obj, index);
@@ -33,8 +36,19 @@ privileged aspect PurchaseOrderFactory_Roo_JpaEntityFactory {
      * @param index
      */
     public void PurchaseOrderFactory.setEmployee(PurchaseOrder obj, int index) {
-        Employee employee = null;
+        CustomerOrder employee = null;
         obj.setEmployee(employee);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void PurchaseOrderFactory.setOrderDate(PurchaseOrder obj, int index) {
+        Calendar orderDate = Calendar.getInstance();
+        obj.setOrderDate(orderDate);
     }
     
     /**

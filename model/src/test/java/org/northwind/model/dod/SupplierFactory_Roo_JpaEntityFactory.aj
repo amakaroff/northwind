@@ -4,6 +4,7 @@
 package org.northwind.model.dod;
 
 import org.northwind.model.City;
+import org.northwind.model.Country;
 import org.northwind.model.Region;
 import org.northwind.model.Supplier;
 import org.northwind.model.dod.SupplierFactory;
@@ -23,6 +24,7 @@ privileged aspect SupplierFactory_Roo_JpaEntityFactory {
         setCompanyName(obj, index);
         setContactName(obj, index);
         setContactTitle(obj, index);
+        setCountry(obj, index);
         setFax(obj, index);
         setPhone(obj, index);
         setPostalCode(obj, index);
@@ -84,6 +86,17 @@ privileged aspect SupplierFactory_Roo_JpaEntityFactory {
     public void SupplierFactory.setContactTitle(Supplier obj, int index) {
         String contactTitle = "contactTitle_" + index;
         obj.setContactTitle(contactTitle);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void SupplierFactory.setCountry(Supplier obj, int index) {
+        Country country = null;
+        obj.setCountry(country);
     }
     
     /**

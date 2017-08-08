@@ -4,7 +4,6 @@
 package org.northwind.model.dod;
 
 import org.northwind.model.City;
-import org.northwind.model.Country;
 import org.northwind.model.Region;
 import org.northwind.model.Store;
 import org.northwind.model.dod.StoreFactory;
@@ -19,9 +18,7 @@ privileged aspect StoreFactory_Roo_JpaEntityFactory {
      */
     public Store StoreFactory.create(int index) {
         Store obj = new Store();
-        setAddress(obj, index);
         setCity(obj, index);
-        setCountry(obj, index);
         setName(obj, index);
         setPhone(obj, index);
         setPostalCode(obj, index);
@@ -35,31 +32,9 @@ privileged aspect StoreFactory_Roo_JpaEntityFactory {
      * @param obj
      * @param index
      */
-    public void StoreFactory.setAddress(Store obj, int index) {
-        String address = "address_" + index;
-        obj.setAddress(address);
-    }
-    
-    /**
-     * TODO Auto-generated method documentation
-     * 
-     * @param obj
-     * @param index
-     */
     public void StoreFactory.setCity(Store obj, int index) {
         City city = null;
         obj.setCity(city);
-    }
-    
-    /**
-     * TODO Auto-generated method documentation
-     * 
-     * @param obj
-     * @param index
-     */
-    public void StoreFactory.setCountry(Store obj, int index) {
-        Country country = null;
-        obj.setCountry(country);
     }
     
     /**

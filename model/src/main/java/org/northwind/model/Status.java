@@ -2,17 +2,10 @@ package org.northwind.model;
 
 /**
  * = Status
- * TODO Auto-generated class documentation
+ TODO Auto-generated class documentation
+ *
  */
 public enum Status {
 
-    NEWLY,
-
-    SEND_BILL,
-
-    SENT,
-
-    CLOSED,
-
-    CANCELED
+    NEWLY, SEND_BILL, SENT, CLOSED, CANCELED
 }

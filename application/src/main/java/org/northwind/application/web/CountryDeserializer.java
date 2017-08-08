@@ -6,6 +6,12 @@ import org.springframework.boot.jackson.JsonObjectDeserializer;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.roo.addon.web.mvc.controller.annotations.config.RooDeserializer;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import io.springlets.web.NotFoundException;
+import org.springframework.boot.jackson.JsonComponent;
 
 /**
  * = CountryDeserializer
@@ -13,6 +19,7 @@ import org.springframework.roo.addon.web.mvc.controller.annotations.config.RooDe
  *
  */
 @RooDeserializer(entity = Country.class)
+@JsonComponent
 public class CountryDeserializer extends JsonObjectDeserializer<Country> {
 
     /**
@@ -37,5 +44,61 @@ public class CountryDeserializer extends JsonObjectDeserializer<Country> {
     public CountryDeserializer(@Lazy CountryService countryService, ConversionService conversionService) {
         this.countryService = countryService;
         this.conversionService = conversionService;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return CountryService
+     */
+    public CountryService getCountryService() {
+        return countryService;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param countryService
+     */
+    public void setCountryService(CountryService countryService) {
+        this.countryService = countryService;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @return ConversionService
+     */
+    public ConversionService getConversionService() {
+        return conversionService;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param conversionService
+     */
+    public void setConversionService(ConversionService conversionService) {
+        this.conversionService = conversionService;
+    }
+
+    /**
+     * TODO Auto-generated method documentation
+     *
+     * @param jsonParser
+     * @param context
+     * @param codec
+     * @param tree
+     * @return Country
+     * @throws IOException
+     */
+    public Country deserializeObject(JsonParser jsonParser, DeserializationContext context, ObjectCodec codec, JsonNode tree) {
+        String idText = tree.asText();
+        Long id = conversionService.convert(idText, Long.class);
+        Country country = countryService.findOne(id);
+        if (country == null) {
+            throw new NotFoundException("Country not found");
+        }
+        return country;
     }
 }

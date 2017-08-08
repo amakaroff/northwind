@@ -20,8 +20,10 @@ privileged aspect CategoryFactory_Roo_JpaEntityFactory {
         Category obj = new Category();
         setCreatedBy(obj, index);
         setCreatedDate(obj, index);
+        setDescription(obj, index);
         setModifiedBy(obj, index);
         setModifiedDate(obj, index);
+        setName(obj, index);
         return obj;
     }
     
@@ -53,6 +55,17 @@ privileged aspect CategoryFactory_Roo_JpaEntityFactory {
      * @param obj
      * @param index
      */
+    public void CategoryFactory.setDescription(Category obj, int index) {
+        String description = "description_" + index;
+        obj.setDescription(description);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
     public void CategoryFactory.setModifiedBy(Category obj, int index) {
         String modifiedBy = "modifiedBy_" + index;
         obj.setModifiedBy(modifiedBy);
@@ -67,6 +80,17 @@ privileged aspect CategoryFactory_Roo_JpaEntityFactory {
     public void CategoryFactory.setModifiedDate(Category obj, int index) {
         Calendar modifiedDate = Calendar.getInstance();
         obj.setModifiedDate(modifiedDate);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void CategoryFactory.setName(Category obj, int index) {
+        String name = "name_" + index;
+        obj.setName(name);
     }
     
 }

@@ -3,14 +3,8 @@
 
 package org.northwind.model;
 
-import java.util.Set;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlRootElement;
 import org.northwind.model.Employee;
 import org.northwind.model.Employee_Roo_Jaxb_Entity;
-import org.northwind.model.PurchaseOrder;
 
 privileged aspect Employee_Roo_Jaxb_Entity {
     
@@ -18,13 +12,5 @@ privileged aspect Employee_Roo_Jaxb_Entity {
      * This Aspect takes the lower precedence
      */
     declare precedence: *, Employee_Roo_Jaxb_Entity;
-    
-    declare @type: Employee: @XmlRootElement(name = "employee", namespace = "http://ws.northwind.org/");
-    
-    declare @method: public Set<PurchaseOrder> Employee.getPurchaseOrders(): @XmlIDREF;
-    
-    declare @method: public Set<PurchaseOrder> Employee.getPurchaseOrders(): @XmlElement(name = "purchaseorder");
-    
-    declare @method: public Set<PurchaseOrder> Employee.getPurchaseOrders(): @XmlElementWrapper(name = "purchaseorders");
     
 }

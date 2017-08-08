@@ -21,19 +21,19 @@
             <artifactId>org.springframework.roo.annotations</artifactId>
             <type>pom</type>
         </dependency>
-        <dependency>
+    <dependency>
             <groupId>org.northwind</groupId>
             <artifactId>repository</artifactId>
         </dependency>
-        <dependency>
+    <dependency>
             <groupId>org.northwind</groupId>
             <artifactId>service.api</artifactId>
         </dependency>
-        <dependency>
+    <dependency>
             <groupId>org.northwind</groupId>
             <artifactId>model</artifactId>
         </dependency>
-        <dependency>
+    <dependency>
             <groupId>org.northwind</groupId>
             <artifactId>integration</artifactId>
         </dependency>

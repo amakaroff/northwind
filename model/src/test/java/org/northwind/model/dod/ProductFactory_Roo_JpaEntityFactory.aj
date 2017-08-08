@@ -4,7 +4,7 @@
 package org.northwind.model.dod;
 
 import java.math.BigDecimal;
-import org.northwind.model.CustomerOrder;
+import org.northwind.model.Category;
 import org.northwind.model.Product;
 import org.northwind.model.Supplier;
 import org.northwind.model.dod.ProductFactory;
@@ -28,6 +28,7 @@ privileged aspect ProductFactory_Roo_JpaEntityFactory {
         setSupplier(obj, index);
         setUnitCost(obj, index);
         setUnitPrice(obj, index);
+        setUnitsInStock(obj, index);
         return obj;
     }
     
@@ -38,7 +39,7 @@ privileged aspect ProductFactory_Roo_JpaEntityFactory {
      * @param index
      */
     public void ProductFactory.setCategory(Product obj, int index) {
-        CustomerOrder category = null;
+        Category category = null;
         obj.setCategory(category);
     }
     
@@ -128,6 +129,17 @@ privileged aspect ProductFactory_Roo_JpaEntityFactory {
     public void ProductFactory.setUnitPrice(Product obj, int index) {
         BigDecimal unitPrice = BigDecimal.valueOf(index);
         obj.setUnitPrice(unitPrice);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void ProductFactory.setUnitsInStock(Product obj, int index) {
+        Integer unitsInStock = new Integer(index);
+        obj.setUnitsInStock(unitsInStock);
     }
     
 }

@@ -3,20 +3,8 @@
 
 package org.northwind.model;
 
-import java.util.Set;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlIDREF;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import org.northwind.model.City;
-import org.northwind.model.Country;
-import org.northwind.model.Region;
 import org.northwind.model.Store;
 import org.northwind.model.Store_Roo_Jaxb_Entity;
-import org.northwind.model.Supplier;
 
 privileged aspect Store_Roo_Jaxb_Entity {
     
@@ -24,38 +12,5 @@ privileged aspect Store_Roo_Jaxb_Entity {
      * This Aspect takes the lower precedence
      */
     declare precedence: *, Store_Roo_Jaxb_Entity;
-    
-    declare @type: Store: @XmlRootElement(name = "store", namespace = "http://ws.northwind.org/");
-    
-    declare @method: public Set<Supplier> Store.getSuppliers(): @XmlIDREF;
-    
-    declare @method: public Set<Supplier> Store.getSuppliers(): @XmlElement(name = "supplier");
-    
-    declare @method: public Set<Supplier> Store.getSuppliers(): @XmlElementWrapper(name = "suppliers");
-    
-    declare @method: public City Store.getCity(): @XmlIDREF;
-    
-    declare @method: public City Store.getCity(): @XmlElement(name = "city");
-    
-    declare @method: public Country Store.getCountry(): @XmlIDREF;
-    
-    declare @method: public Country Store.getCountry(): @XmlElement(name = "country");
-    
-    declare @method: public Region Store.getRegion(): @XmlIDREF;
-    
-    declare @method: public Region Store.getRegion(): @XmlElement(name = "region");
-    
-    declare @method: public Long Store.getId(): @XmlTransient;
-    
-    /**
-     * Must return an unique ID across all entities
-     * 
-     * @return String
-     */
-    @XmlID
-    @XmlAttribute(name = "id")
-    public String Store.getXmlIdentityInfo() {
-        return getClass().getName() + ":" + getId();
-    }
     
 }

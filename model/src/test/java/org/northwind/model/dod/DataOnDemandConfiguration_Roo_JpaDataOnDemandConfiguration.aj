@@ -18,15 +18,12 @@ import org.northwind.model.dod.PurchaseOrderDataOnDemand;
 import org.northwind.model.dod.RegionDataOnDemand;
 import org.northwind.model.dod.ReportDataOnDemand;
 import org.northwind.model.dod.ShipperDataOnDemand;
+import org.northwind.model.dod.SoldProductDataOnDemand;
 import org.northwind.model.dod.StoreDataOnDemand;
 import org.northwind.model.dod.SupplierDataOnDemand;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 
 privileged aspect DataOnDemandConfiguration_Roo_JpaDataOnDemandConfiguration {
-    
-    declare @type: DataOnDemandConfiguration: @TestConfiguration;
     
     /**
      * TODO Auto-generated attribute documentation
@@ -34,16 +31,6 @@ privileged aspect DataOnDemandConfiguration_Roo_JpaDataOnDemandConfiguration {
      */
     private EntityManager DataOnDemandConfiguration.entityManager;
     
-    /**
-     * TODO Auto-generated constructor documentation
-     * 
-     * @param entityManager
-     */
-    @Autowired
-    public DataOnDemandConfiguration.new(EntityManager entityManager) {
-        setEntityManager(entityManager);
-    }
-
     /**
      * TODO Auto-generated method documentation
      * 
@@ -190,6 +177,16 @@ privileged aspect DataOnDemandConfiguration_Roo_JpaDataOnDemandConfiguration {
     @Bean
     public ShipperDataOnDemand DataOnDemandConfiguration.shipperDataOnDemand() {
         return new ShipperDataOnDemand(getEntityManager());
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @return SoldProductDataOnDemand
+     */
+    @Bean
+    public SoldProductDataOnDemand DataOnDemandConfiguration.soldProductDataOnDemand() {
+        return new SoldProductDataOnDemand(getEntityManager());
     }
     
     /**

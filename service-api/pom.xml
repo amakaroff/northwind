@@ -21,7 +21,7 @@
             <artifactId>org.springframework.roo.annotations</artifactId>
             <type>pom</type>
         </dependency>
-        <dependency>
+    <dependency>
             <groupId>org.northwind</groupId>
             <artifactId>model</artifactId>
         </dependency>

@@ -25,15 +25,21 @@ privileged aspect CustomerOrderFactory_Roo_JpaEntityFactory {
      */
     public CustomerOrder CustomerOrderFactory.create(int index) {
         CustomerOrder obj = new CustomerOrder();
+        setBirthDate(obj, index);
         setCity(obj, index);
         setCloseDate(obj, index);
         setCountry(obj, index);
         setCustomer(obj, index);
-        setDescription(obj, index);
+        setEmployee(obj, index);
+        setExtension(obj, index);
+        setFirstName(obj, index);
         setFreight(obj, index);
+        setHireDate(obj, index);
         setInvoiceDate(obj, index);
-        setName(obj, index);
+        setLastName(obj, index);
+        setNotes(obj, index);
         setOrderDate(obj, index);
+        setPhoto(obj, index);
         setRegion(obj, index);
         setRequiredDate(obj, index);
         setShipAddress(obj, index);
@@ -43,7 +49,19 @@ privileged aspect CustomerOrderFactory_Roo_JpaEntityFactory {
         setShippedDate(obj, index);
         setShipper(obj, index);
         setStatus(obj, index);
+        setTitle(obj, index);
         return obj;
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void CustomerOrderFactory.setBirthDate(CustomerOrder obj, int index) {
+        Calendar birthDate = Calendar.getInstance();
+        obj.setBirthDate(birthDate);
     }
     
     /**
@@ -96,9 +114,31 @@ privileged aspect CustomerOrderFactory_Roo_JpaEntityFactory {
      * @param obj
      * @param index
      */
-    public void CustomerOrderFactory.setDescription(CustomerOrder obj, int index) {
-        String description = "description_" + index;
-        obj.setDescription(description);
+    public void CustomerOrderFactory.setEmployee(CustomerOrder obj, int index) {
+        CustomerOrder employee = obj;
+        obj.setEmployee(employee);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void CustomerOrderFactory.setExtension(CustomerOrder obj, int index) {
+        String extension = "extension_" + index;
+        obj.setExtension(extension);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void CustomerOrderFactory.setFirstName(CustomerOrder obj, int index) {
+        String firstName = "firstName_" + index;
+        obj.setFirstName(firstName);
     }
     
     /**
@@ -118,6 +158,17 @@ privileged aspect CustomerOrderFactory_Roo_JpaEntityFactory {
      * @param obj
      * @param index
      */
+    public void CustomerOrderFactory.setHireDate(CustomerOrder obj, int index) {
+        Calendar hireDate = Calendar.getInstance();
+        obj.setHireDate(hireDate);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
     public void CustomerOrderFactory.setInvoiceDate(CustomerOrder obj, int index) {
         Calendar invoiceDate = Calendar.getInstance();
         obj.setInvoiceDate(invoiceDate);
@@ -129,9 +180,20 @@ privileged aspect CustomerOrderFactory_Roo_JpaEntityFactory {
      * @param obj
      * @param index
      */
-    public void CustomerOrderFactory.setName(CustomerOrder obj, int index) {
-        String name = "name_" + index;
-        obj.setName(name);
+    public void CustomerOrderFactory.setLastName(CustomerOrder obj, int index) {
+        String lastName = "lastName_" + index;
+        obj.setLastName(lastName);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void CustomerOrderFactory.setNotes(CustomerOrder obj, int index) {
+        String notes = "notes_" + index;
+        obj.setNotes(notes);
     }
     
     /**
@@ -143,6 +205,17 @@ privileged aspect CustomerOrderFactory_Roo_JpaEntityFactory {
     public void CustomerOrderFactory.setOrderDate(CustomerOrder obj, int index) {
         Calendar orderDate = Calendar.getInstance();
         obj.setOrderDate(orderDate);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void CustomerOrderFactory.setPhoto(CustomerOrder obj, int index) {
+        String photo = "photo_" + index;
+        obj.setPhoto(photo);
     }
     
     /**
@@ -242,6 +315,17 @@ privileged aspect CustomerOrderFactory_Roo_JpaEntityFactory {
     public void CustomerOrderFactory.setStatus(CustomerOrder obj, int index) {
         Status status = Status.class.getEnumConstants()[0];
         obj.setStatus(status);
+    }
+    
+    /**
+     * TODO Auto-generated method documentation
+     * 
+     * @param obj
+     * @param index
+     */
+    public void CustomerOrderFactory.setTitle(CustomerOrder obj, int index) {
+        String title = "title_" + index;
+        obj.setTitle(title);
     }
     
 }

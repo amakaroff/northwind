@@ -3,10 +3,6 @@
 
 package org.northwind.model;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 import org.northwind.model.Category;
 import org.northwind.model.Category_Roo_Jaxb_Entity;
 
@@ -16,20 +12,5 @@ privileged aspect Category_Roo_Jaxb_Entity {
      * This Aspect takes the lower precedence
      */
     declare precedence: *, Category_Roo_Jaxb_Entity;
-    
-    declare @type: Category: @XmlRootElement(name = "category", namespace = "http://ws.northwind.org/");
-    
-    declare @method: public Long Category.getId(): @XmlTransient;
-    
-    /**
-     * Must return an unique ID across all entities
-     * 
-     * @return String
-     */
-    @XmlID
-    @XmlAttribute(name = "id")
-    public String Category.getXmlIdentityInfo() {
-        return getClass().getName() + ":" + getId();
-    }
     
 }

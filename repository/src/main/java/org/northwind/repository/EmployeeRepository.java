@@ -1,6 +1,8 @@
 package org.northwind.repository;
 import org.northwind.model.Employee;
 import org.springframework.roo.addon.layers.repository.jpa.annotations.RooJpaRepository;
+import io.springlets.data.jpa.repository.DetachableJpaRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * = EmployeeRepository
@@ -8,5 +10,6 @@ import org.springframework.roo.addon.layers.repository.jpa.annotations.RooJpaRep
  *
  */
 @RooJpaRepository(entity = Employee.class)
-public interface EmployeeRepository {
+@Transactional(readOnly = true)
+public interface EmployeeRepository extends DetachableJpaRepository<Employee, Long>, EmployeeRepositoryCustom {
 }

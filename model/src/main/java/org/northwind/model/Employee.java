@@ -2,17 +2,10 @@ package org.northwind.model;
 import org.springframework.roo.addon.javabean.annotations.RooJavaBean;
 import org.springframework.roo.addon.javabean.annotations.RooToString;
 import org.springframework.roo.addon.jpa.annotations.entity.RooJpaEntity;
-import java.util.Calendar;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.springframework.format.annotation.DateTimeFormat;
-import java.util.HashSet;
-import java.util.Set;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import org.springframework.roo.addon.jpa.annotations.entity.JpaRelationType;
-import org.springframework.roo.addon.jpa.annotations.entity.RooJpaRelation;
 import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
+import io.springlets.format.EntityFormat;
+import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * = Employee
@@ -23,65 +16,29 @@ import org.springframework.roo.addon.ws.annotations.jaxb.RooJaxbEntity;
 @RooToString
 @RooJpaEntity
 @RooJaxbEntity
+@Entity
+@EntityFormat
+@XmlRootElement(name = "employee", namespace = "http://ws.northwind.org/")
 public class Employee extends Party {
 
     /**
      * TODO Auto-generated attribute documentation
      *
      */
-    private String firstName;
+    public static final String ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE = "The given Iterable of items to add can't be null!";
 
     /**
      * TODO Auto-generated attribute documentation
      *
      */
-    private String lastName;
+    public static final String ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE = "The given Iterable of items to add can't be null!";
 
     /**
-     * TODO Auto-generated attribute documentation
+     * TODO Auto-generated method documentation
      *
+     * @return String
      */
-    private String title;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Calendar birthDate;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(style = "M-")
-    private Calendar hireDate;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    private String extension;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    private String photo;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    private String notes;
-
-    /**
-     * TODO Auto-generated attribute documentation
-     *
-     */
-    @OneToMany(cascade = { javax.persistence.CascadeType.MERGE, javax.persistence.CascadeType.PERSIST }, fetch = FetchType.LAZY, mappedBy = "employee")
-    @RooJpaRelation(type = JpaRelationType.AGGREGATION)
-    private Set<PurchaseOrder> purchaseOrders = new HashSet<PurchaseOrder>();
+    public String toString() {
+        return "Employee {" + "ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE='" + ITERABLE_TO_ADD_CANT_BE_NULL_MESSAGE + '\'' + ", ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE='" + ITERABLE_TO_REMOVE_CANT_BE_NULL_MESSAGE + '\'' + "}" + super.toString();
+    }
 }
