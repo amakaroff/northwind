@@ -327,3 +327,4 @@ push-in --package application:org.northwind.application
 // Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-08-08 12:32:20
 push-in --all --force
 // [failed] script --file northwind.iml
+!os --command mvn

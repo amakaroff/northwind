@@ -5,7 +5,14 @@
       <configuration />
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/org/northwind/NorthwindApplication.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/northwind/application/config/SpringDataJpaDetachableRepositoryConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/northwind/application/config/WebMvcConfiguration.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/northwind/application/config/WsEndpointsConfiguration.java</file>
+        </fileset>
+      </configuration>
     </facet>
     <facet type="web" name="Web">
       <configuration>
@@ -129,7 +136,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.hsqldb:hsqldb:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: io.springlets:springlets-data-jpa:1.2.0.RC1" level="project" />
     <orderEntry type="library" name="Maven: io.springlets:springlets-data-commons:1.2.0.RC1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.h2database:h2:1.4.192" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.h2database:h2:1.4.192" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-tomcat:1.4.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.5.5" level="project" />

@@ -1,4 +1,5 @@
 package org.northwind.service.api;
+
 import org.northwind.model.Category;
 import org.springframework.roo.addon.layers.service.annotations.RooService;
 import io.springlets.data.domain.GlobalSearch;
